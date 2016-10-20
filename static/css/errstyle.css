@@ -1,0 +1,39 @@
+@font-face 
+{
+	font-family: 'Dosis';
+	src: url('../font/Dosis-Medium.ttf') format('truetype');
+}
+
+body
+{
+	text-align: center;
+	background-color: #DDDDDD;
+	font-family: Dosis;
+}
+
+p
+{
+	font-size: 30px;
+	color: #001f6f;
+}
+
+h1
+{
+	font-size: 60px;
+}
+
+a
+{
+	font-size: 20px;
+	color: #EB1C1C;
+}
+
+.erreur
+{
+	color:#CF0000;
+}
+
+.succes
+{
+	color:#00CF00;
+}
