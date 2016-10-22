@@ -1,4 +1,4 @@
 <?php
 	echo('Bla');
-	header("Location: ./static/html/index.html");
+	header("Location: ./src/page/index.php");
 ?>

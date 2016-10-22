@@ -7,6 +7,9 @@
 	<body>
 
 <?php
+
+include("func/decipher.php");
+
 if(isset($_POST['submit']))
 {
 	#print_r($_POST);
@@ -39,7 +42,7 @@ if(isset($_POST['submit']))
 						
 			if($exist == 1)
 			{
-				if($password != $liste[1])
+				if($password != decipher($liste[1]))
 				{
 					$succes = 0;
 					$errmsg = "Le mot de passe est incorrect.";
@@ -72,7 +75,7 @@ if(isset($_POST['submit']))
 }
 ?>
 
-		<a href="../static/html/connexion.html">Retour connexion</a><br>
-		<a href="../static/html/index.html">Retour acceuil</a>
+		<a href="page/connexion.php">Retour connexion</a><br>
+		<a href="page/index.php">Retour acceuil</a>
 	</body>
 </html>

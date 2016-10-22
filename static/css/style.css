@@ -39,6 +39,16 @@ a
 	background-color: #EEEEEE;
 }
 
+.left
+{
+	text-align: left
+}
+
+.room
+{
+	background-color: #AAAAAA;
+}
+
 #captcha
 {
 	width: 100px;

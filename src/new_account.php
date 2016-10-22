@@ -16,6 +16,8 @@ BONUS:
 -vérifier validité mail
 */
 
+include("func/cipher.php");
+
 if(isset($_POST['submit']))
 {
 	session_start();
@@ -86,7 +88,7 @@ if(isset($_POST['submit']))
 						}
 						else
 						{
-							$text = $username . "," . $password . "," . $mail . "\r\n";
+							$text = $username . "," . cipher($password) . "," . $mail . "\r\n";
 							fwrite($fp, $text);
 						}
 					fclose($fp);
@@ -113,9 +115,11 @@ if(isset($_POST['submit']))
 	
 	session_destroy();
 }
+
+
 ?>
 
-		<a href="../static/html/inscription.html">Retour inscription</a><br>
-		<a href="../static/html/index.html">Retour acceuil</a>
+		<a href="page/inscription.php">Retour inscription</a><br>
+		<a href="page/index.php">Retour acceuil</a>
 	</body>
 </html>
