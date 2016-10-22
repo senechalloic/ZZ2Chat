@@ -38,3 +38,9 @@ a
 {
 	background-color: #EEEEEE;
 }
+
+#captcha
+{
+	width: 100px;
+	height: auto;
+}

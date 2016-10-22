@@ -1,18 +1,25 @@
+<html>
+	<head>
+		<title>ZZchat</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/errstyle.css"/>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+
 <?php
 if(isset($_POST['submit']))
 {
 	#print_r($_POST);
-	echo "<html><head><title>ZZchat - Erreur</title><link rel=\"stylesheet\" type=\"text/css\" href=\"../static/css/errstyle.css\"/></head><body>";
-	#echo "<body><img src=\"../static/img/cross.png\"><h1 class=\"succes\">Erreur</h1>";
+	$succes = 1;
+	$errmsg = '';
 	
 	$username = $_POST['username'];
 	$password = $_POST['password'];	
 	
 	if(empty($username) || empty($password))
 	{
-		
-		echo "<img src=\"../static/img/cross.png\"><h1 class=\"erreur\">Erreur</h1>";
-		echo "<p>Tous les champs doivent être complétés.</p>";
+		$succes = 0;
+		$errmsg = "Tous les champs doivent être complétés.";
 	}
 	else
 	{
@@ -32,21 +39,16 @@ if(isset($_POST['submit']))
 						
 			if($exist == 1)
 			{
-				if($password == $liste[1])
+				if($password != $liste[1])
 				{
-					echo "<img src=\"../static/img/ok.png\"><h1 class=\"succes\">Connecté</h1>";
-					echo "<p>Vous êtes connectés, amusez-vous!</p>";
-				}
-				else
-				{
-					echo "<img src=\"../static/img/cross.png\"><h1 class=\"erreur\">Erreur</h1>";
-					echo "<p>Le mot de passe est incorrect.</p>";
+					$succes = 0;
+					$errmsg = "Le mot de passe est incorrect.";
 				}
 			}
 			else
 			{
-				echo "<img src=\"../static/img/cross.png\"><h1 class=\"erreur\">Erreur</h1>";
-				echo "<p>Le login est incorrect.</p>";
+				$succes = 0;
+				$errmsg = "Le login est incorrect.";
 				
 				fclose($fp);
 			}
@@ -56,9 +58,21 @@ if(isset($_POST['submit']))
 			#error opening the file
 		}
 	}
-	echo "<a href=\"../static/html/connexion.html\">Retour connexion</a><br>";
-	echo "<a href=\"../static/html/index.html\">Retour acceuil</a>";
-	echo "</body></html>";
+	
+	if($succes == 1)
+	{
+		echo "<img src=\"../static/img/ok.png\"><h1 class=\"succes\">Connecté</h1>";
+		echo "<p>Vous êtes connectés, amusez-vous!</p><br>";
+	}
+	else
+	{
+		echo "<img src=\"../static/img/cross.png\"><h1 class=\"erreur\">Erreur</h1>";
+		echo "<p>$errmsg</p><br>";
+	}
 }
 ?>
 
+		<a href="../static/html/connexion.html">Retour connexion</a><br>
+		<a href="../static/html/index.html">Retour acceuil</a>
+	</body>
+</html>

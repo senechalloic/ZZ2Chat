@@ -1,3 +1,11 @@
+<html>
+	<head>
+		<title>ZZchat</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/errstyle.css"/>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+
 <?php
 /*
 TO DO LIST:
@@ -6,78 +14,108 @@ TO DO LIST:
 
 BONUS:
 -vérifier validité mail
--vérifier adresse IP ou ajouter un captcha
 */
 
 if(isset($_POST['submit']))
 {
+	session_start();
 	#print_r($_POST);
-	echo "<html><head><title>ZZchat - Erreur</title><link rel=\"stylesheet\" type=\"text/css\" href=\"../static/css/errstyle.css\"/></head>";
-	echo "<body><img src=\"../static/img/cross.png\"><h1 class=\"erreur\">Erreur</h1>";
+	#print_r($_SESSION);
+
+	$succes = 1;
+	$errmsg = '';
 	
 	$username = $_POST['username'];
 	$password = $_POST['password'];	
 	$cpassword = $_POST['cpassword'];	
 	$mail = $_POST['mail'];
+	$captcha = $_POST['captcha'];
+	$realcaptcha = $_SESSION['captcha'];
 	
-	if(empty($username) || empty($password) || empty($cpassword) || empty($mail))
+	if(empty($username) || empty($password) || empty($cpassword) || empty($mail) || empty($captcha))
 	{
-		echo "<p>Tous les champs doivent être complétés.</p>";
+		$succes = 0;
+		$errmsg = "Tous les champs doivent être complétés.";
 	}
 	else
 	{
-		if($password != $cpassword)
+		if(strtoupper($captcha) != strtoupper($realcaptcha))
 		{
-			echo "<p>Les mots de passe que vous avez entrés sont différents.</p>";
+			$succes = 0;
+			$errmsg = "Le captcha est incorrect.";
 		}
 		else
 		{
-			if($username == $password)
+			if($password != $cpassword)
 			{
-				echo "<p>Le login doit être différent du mot de passe.</p>";
-			}
-			elseif(strlen($password) < 8)
-			{
-				echo "<p>Le mot de passe doit contenir au moins 8 caractères</p>";
+				$succes = 0;
+				$errmsg = "Les mots de passe que vous avez entrés sont différents.";
 			}
 			else
 			{
-				$exist = 0; #On suppose que le login n'existe pas
-				$fp = fopen('../db/users.txt', 'a+');
-				if($fp)
+				if($username == $password)
 				{
-					while(($line = fgets($fp)) !== false && $exist == 0)
-					{
-						$liste = explode(',', $line);
-						if($liste[0] == $username)
-						{
-							$exist = 1;
-						}
-						echo "<p>$liste[0] et $username: $exist</p>";
-					}
-					
-					if($exist == 1)
-					{
-						echo "<p>Ce login n'est pas disponible</p>";
-					}
-					else
-					{
-						$text = $username . "," . $password . "," . $mail . "\r\n";
-						fwrite($fp, $text);
-						fclose($fp);
-						header("Location: ../static/html/index.html");
-					}
+					$succes = 0;
+					$errmsg = "Le login doit être différent du mot de passe.";
+				}
+				elseif(strlen($password) < 8)
+				{
+					$succes = 0;
+					$errmsg = "Le mot de passe doit contenir au moins 8 caractères";
 				}
 				else
 				{
-					#error opening the file
+					$exist = 0; #On suppose que le login n'existe pas
+					$fp = fopen('../db/users.txt', 'a+');
+					if($fp)
+					{
+						while(($line = fgets($fp)) !== false && $exist == 0)
+						{
+							$liste = explode(',', $line);
+							if($liste[0] == $username)
+							{
+								$exist = 1;
+							}
+							#echo "<p>$liste[0] et $username: $exist</p>";
+						}
+						
+						if($exist == 1)
+						{
+							$succes = 0;
+							$errmsg = "Ce login n'est pas disponible";
+						}
+						else
+						{
+							$text = $username . "," . $password . "," . $mail . "\r\n";
+							fwrite($fp, $text);
+						}
+					fclose($fp);
+					}
+					else
+					{
+						$succes = 0;
+						$errmsg = "Impossible de créer de comptes pour le moment.";
+					}
 				}
 			}
 		}
 	}
-	echo "<a href=\"../static/html/inscription.html\">Retour inscription</a><br>";
-	echo "<a href=\"../static/html/index.html\">Retour acceuil</a>";
-	echo "</body></html>";
+	if($succes == 1)
+	{
+		echo "<img src=\"../static/img/ok.png\"><h1 class=\"succes\">Inscrit</h1>";
+		echo "<p>Bienvenue sur la ZZchat $username!</p><p>Votre compte a bien été créé</p><br>";
+	}
+	else
+	{
+		echo "<img src=\"../static/img/cross.png\"><h1 class=\"erreur\">Erreur</h1>";
+		echo "<p>$errmsg</p><br>";
+	}
+	
+	session_destroy();
 }
 ?>
 
+		<a href="../static/html/inscription.html">Retour inscription</a><br>
+		<a href="../static/html/index.html">Retour acceuil</a>
+	</body>
+</html>
