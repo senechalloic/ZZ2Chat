@@ -1,4 +1,4 @@
-		<br>
+		<p class="linebreak"></p>
 		<div class="container">
 			<center>
 				<div class="row header">
@@ -6,7 +6,6 @@
 						<br>
 						
 						<?php
-						
 							$nbrcon = 0;
 							$strcon = '';
 							$nbrins = 0;
@@ -37,20 +36,31 @@
 							$strcon = substr($strcon, 0, -2);
 							echo "<p class=\"left\"> $nbrins inscrits: $strins</p>";
 							echo "<p class=\"left\"> $nbrcon connectés: $strcon</p>";
-						
 						?>
 						
 					</div>
-						<div class="col-md-4">
-							<img src="../../static/img/chat.png" style="background-image" alt="plus de chat">
-						</div>
+					<div class="col-md-4">
+						<img src="../../static/img/chat.png" class="logo" alt="logo ZZchat">
+					</div>
 					<div class="col-md-4">
 						<br><br>
 						<p>Bienvenue dans le grand chat</p>
 						<p>Chat actif ouvert à tous.</p>
-						<a href="../page/room.php">Salle de discussion public</a>
 					</div>
 				</div>
-				<br>
+				<div class="row menu">
+					<div class="col-md-3">
+						<a href="../page/index.php"><img src="../../static/img/button/fr/acceuil.png" class="button" alt="boutton acceuil"></a>
+					</div>
+					<div class="col-md-3">
+					<a href="../page/profile.php"><img src="../../static/img/button/fr/profile.png" class="button" alt="boutton profile"></a>
+					</div>
+					<div class="col-md-3">
+ 					<a href="../page/room.php"><img src="../../static/img/button/fr/chat.png" class="button"  alt="boutton chat"></a>
+					</div>
+					<div class="col-md-3">
+					<a href="../logout.php"><img src="../../static/img/button/fr/deconnexion.png" class="button"  alt="boutton deconnexion"></a>
+					</div>
+				</div>
 			</center>
 		</div>

@@ -11,3 +11,5 @@ ZZChat is a chat client with the folowings features:
   * Users registration
   * Multilanguage (English and French)
   * Message formatting
+  * Crypted password (original method)
+  * Captcha security for subscription
