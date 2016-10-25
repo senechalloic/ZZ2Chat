@@ -7,12 +7,31 @@
 		<link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
 	</head>
 	<body>
-		<?php include("../html/header.php"); ?>
-		<div>
-			<center>
-				<p>Ton profil</p>
-			</center>
-		</div>
+		<?php 
+		
+		/*
+		Mail visible:
+					<input type="checkbox" name="showmail"><br>
+		*/
+		
+		
+		include("../html/header.php"); 
+		if(isset($_GET['pseudo']))
+		{
+			echo "pagepersodugar" . $_GET['pseudo'];
+		}
+		elseif(isset($_SESSION['pseudo']))
+		{
+			echo "page perso plus choix";
+		}
+		else
+		{
+			echo"co toi!";
+		}
+		
+		
+		
+		?>
 		<script src="../../static/js/bootstrap.js" type="text/javascript"></script>
 	</body>
 </html>

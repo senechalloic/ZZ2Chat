@@ -20,7 +20,7 @@
 					<input type="password" name="cpassword"><br>
 					Mail adress:<br>
 					<input type="text" name="mail"><br><br>
-					<img src="../captcha.php" alt="captcha" id="captcha"/> <br>
+					<img src="../captcha.php" alt="captcha" id="captcha"/><br>
 					Type these letters:<br>
 					<input type="text" name="captcha"><br>
 					<input type="submit" value="Soumettre" name="submit">

@@ -6,6 +6,8 @@
 						<br>
 						
 						<?php
+							session_start();
+							#print_r($_SESSION);  AFFICHER CA: pour comprendre le système de session et de connexion du site.
 							$nbrcon = 0;
 							$strcon = '';
 							$nbrins = 0;
@@ -19,12 +21,12 @@
 								while(($line = fgets($fp)) !== false)
 								{
 									$liste = explode(',', $line);
-									$strins .= "<a href=\"../page/connexion.php\">$liste[0]</a>, ";
+									$strins .= "<a href=\"../page/profile.php?pseudo=$liste[0]\">$liste[0]</a>, ";
 									$nbrins += 1;
 								}
 								while(($line = fgets($fp2)) !== false)
 								{
-									$strcon .= "<a href=\"../page/connexion.php\">$line</a>, ";
+									$strcon .= "<a href=\"../page/profile.php?pseudo=$line\">$line</a>, ";
 									$nbrcon += 1;
 								}
 							}
@@ -40,7 +42,7 @@
 						
 					</div>
 					<div class="col-md-4">
-						<img src="../../static/img/chat.png" class="logo" alt="logo ZZchat">
+						<a href="index.php"><img src="../../static/img/chat.png" class="logo" alt="logo ZZchat"></a>
 					</div>
 					<div class="col-md-4">
 						<br><br>
@@ -48,19 +50,11 @@
 						<p>Chat actif ouvert à tous.</p>
 					</div>
 				</div>
-				<div class="row menu">
-					<div class="col-md-3">
-						<a href="../page/index.php"><img src="../../static/img/button/fr/acceuil.png" class="button" alt="boutton acceuil"></a>
-					</div>
-					<div class="col-md-3">
-					<a href="../page/profile.php"><img src="../../static/img/button/fr/profile.png" class="button" alt="boutton profile"></a>
-					</div>
-					<div class="col-md-3">
- 					<a href="../page/room.php"><img src="../../static/img/button/fr/chat.png" class="button"  alt="boutton chat"></a>
-					</div>
-					<div class="col-md-3">
-					<a href="../logout.php"><img src="../../static/img/button/fr/deconnexion.png" class="button"  alt="boutton deconnexion"></a>
-					</div>
-				</div>
+				<?php 
+				if(isset($_SESSION['pseudo'])){
+					include("../html/menuCon.php"); }
+				else{
+					include("../html/menuDec.php"); }
+				?>
 			</center>
 		</div>

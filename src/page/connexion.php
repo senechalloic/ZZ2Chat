@@ -7,25 +7,15 @@
 		<link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
 	</head>
 	<body>
-		<?php include("../html/header.php"); ?>
-		<div>
-			<center>
-				<br>
-				<form action="../login.php" method="post">
-					Username:<br>
-					<input type="text" name="username"><br>
-					Password:<br>
-					<input type="password" name="password">
-					<br>
-					<input type="submit" value="Soumettre" name="submit">
-				</form>
-				<a href="inscription.php">Mot de passe perdu</a>
-				<br>
-				<a href="inscription.php">Inscription</a>
-				<br><br>
-				<a href="index.php">Retour à l'acceuil</a>
-			</center>
-		</div>
+		<?php 
+			include("../html/header.php");
+			
+			if(isset($_SESSION['pseudo'])){
+				echo "<br><br><center><p>Vous êtes déjà connecté</p></center>";}
+			else {
+				include("../html/toconnect.php"); }
+		?>
+		
 		<script src="../../static/js/bootstrap.js" type="text/javascript"></script>
 	</body>
 </html>

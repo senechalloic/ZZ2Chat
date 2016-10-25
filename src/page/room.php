@@ -24,12 +24,12 @@
 								$randimg = $listimg[$liste[1]];
 								
 								if($i == 0){
-									echo "<p class=\"left\" style=\"background-color:#AAAADD\">-<img src=\"../../static/img/animal/$randimg\" style=\"height:30px;width:auto;$\">-<b> $liste[0]</b><i>[$liste[2]]</i>: $liste[3]</p>"; 
+									echo "<p class=\"left\" style=\"background-color:#AAAADD\">-<a href=\"profile.php?pseudo=$liste[0]\"><img src=\"../../static/img/animal/$randimg\" style=\"height:30px;width:auto;$\"></a>-<b> $liste[0]</b><i>[$liste[2]]</i>: $liste[3]</p>"; 
 									$i += 1;
 								}
 								else{
-									echo "<p class=\"left\" style=\"background-color:#A0A0A0\">-<img src=\"../../static/img/animal/$randimg\" style=\"height:30px;width:auto;$\">-<b> $liste[0]<i></b>[$liste[2]]</i>: $liste[3]</p>"; 
-									$i = 0;
+									echo "<p class=\"left\" style=\"background-color:#A0A0A0\">-<a href=\"profile.php?pseudo=$liste[0]\"><img src=\"../../static/img/animal/$randimg\" style=\"height:30px;width:auto;$\"></a>-<b> $liste[0]</b><i>[$liste[2]]</i>: $liste[3]</p>"; 
+									$i = 0; #A0A0A0
 								}
 							}
 						}

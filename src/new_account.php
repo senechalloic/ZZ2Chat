@@ -21,8 +21,8 @@ include("func/cipher.php");
 if(isset($_POST['submit']))
 {
 	session_start();
-	#print_r($_POST);
-	#print_r($_SESSION);
+	print_r($_POST);
+	print_r($_SESSION);
 
 	$succes = 1;
 	$errmsg = '';
@@ -31,6 +31,7 @@ if(isset($_POST['submit']))
 	$password = $_POST['password'];	
 	$cpassword = $_POST['cpassword'];	
 	$mail = $_POST['mail'];
+	$showmail = $_POST['showmail'];
 	$captcha = $_POST['captcha'];
 	$realcaptcha = $_SESSION['captcha'];
 	
@@ -88,7 +89,9 @@ if(isset($_POST['submit']))
 						}
 						else
 						{
-							$text = $username . "," . cipher($password) . "," . $mail . "\r\n";
+							$randimg = rand(0,11);
+							$dateins = date("j/m/Y");
+							$text = $username . "," . cipher($password) . "," . $mail . "," . $dateins . "," . $randimg . "," . $showmail . "\r\n";
 							fwrite($fp, $text);
 						}
 					fclose($fp);
@@ -102,24 +105,47 @@ if(isset($_POST['submit']))
 			}
 		}
 	}
+	
+	session_destroy();
+	
 	if($succes == 1)
 	{
 		echo "<img src=\"../static/img/ok.png\"><h1 class=\"succes\">Inscrit</h1>";
 		echo "<p>Bienvenue sur la ZZchat $username!</p><p>Votre compte a bien été créé</p><br>";
+		session_start();
+		$_SESSION['pseudo'] = $username;
+		$_SESSION['mail'] = $mail;
+		$_SESSION['dateins'] = $dateins;
+		$_SESSION['randimg'] = $randimg;
+		#$_SESSION['showmail'] = $showmail;
+		
+		$date = date("j/m/Y H:i");
+		$_SESSION['lastaction'] = $date;
+		
+		
+		$fp = fopen('../db/online.txt', 'a+');
+		if($fp)
+		{
+			$text = $username . "\r\n";
+			fwrite($fp, $text);
+			fclose($fp);
+		}
 	}
 	else
 	{
 		echo "<img src=\"../static/img/cross.png\"><h1 class=\"erreur\">Erreur</h1>";
 		echo "<p>$errmsg</p><br>";
+		
+		echo "<a href=\"page/inscription.php\">Retour inscription</a><br>";
 	}
 	
-	session_destroy();
+	
 }
 
 
 ?>
 
-		<a href="page/inscription.php">Retour inscription</a><br>
+		
 		<a href="page/index.php">Retour acceuil</a>
 	</body>
 </html>

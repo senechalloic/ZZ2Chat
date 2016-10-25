@@ -41,6 +41,11 @@ p
 	width: auto;
 }
 
+.credit
+{
+	font-size: small;
+}
+
 .header
 {
 	border: 3px solid #B7695C;
@@ -75,7 +80,8 @@ p
 	background-color: #AAAAAA;
 	width:87%;
 	height:330px;
-	overflow:auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 	direction: ltr;
 }
 
@@ -88,6 +94,12 @@ p
 }
 
 #captcha
+{
+	width: 100px;
+	height: auto;
+}
+
+#logoisima
 {
 	width: 100px;
 	height: auto;

@@ -8,6 +8,8 @@
 
 <?php
 
+#Redirection automatique au bout de 5sec?
+
 include("func/decipher.php");
 
 if(isset($_POST['submit']))
@@ -66,16 +68,36 @@ if(isset($_POST['submit']))
 	{
 		echo "<img src=\"../static/img/ok.png\"><h1 class=\"succes\">Connecté</h1>";
 		echo "<p>Vous êtes connectés, amusez-vous!</p><br>";
+		session_start();
+		$_SESSION['pseudo'] = $username;
+		$_SESSION['mail'] = $liste[2];
+		$_SESSION['dateins'] = $liste[3];
+		$_SESSION['randimg'] = $liste[4];
+		$_SESSION['showmail'] = $liste[5];
+		
+		$date = date("j/m/Y H:i");
+		$_SESSION['lastaction'] = $date;
+		
+		$fp = fopen('../db/online.txt', 'a+');
+		if($fp)
+		{
+			$text = $username . "\r\n";
+			fwrite($fp, $text);
+			fclose($fp);
+		}
 	}
 	else
 	{
 		echo "<img src=\"../static/img/cross.png\"><h1 class=\"erreur\">Erreur</h1>";
 		echo "<p>$errmsg</p><br>";
+		echo "<a href=\"page/connexion.php\">Retour connexion</a><br>";
 	}
 }
 ?>
 
-		<a href="page/connexion.php">Retour connexion</a><br>
+		
 		<a href="page/index.php">Retour acceuil</a>
+		
+	
 	</body>
 </html>
