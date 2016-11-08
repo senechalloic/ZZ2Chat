@@ -93,6 +93,19 @@ p
 	height:45px;
 }
 
+.profile
+{
+	text-align:center;
+	font-size: 30px;
+	font-weight: bold;
+	
+}
+
+.imageprofile
+{
+	text-align:center;
+}
+
 #captcha
 {
 	width: 100px;
