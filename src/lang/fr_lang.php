@@ -84,6 +84,10 @@ $newaccount_err = "Erreur";
 $newaccount_retinscript = "Retour inscription";
 $newaccount_retacceuil = "Retour acceuil";
 
-
+#page/connexion.php
+$pseudoprofile= "Pseudo";
+$mailprofile = "Adresse Mail";
+$inscritprofile = "Inscrit Depuis le";
+$lastactionprofile = "Derniere action a été effectué le";
 
 ?>

@@ -84,6 +84,11 @@ $newaccount_err = "Error";
 $newaccount_retinscript = "Back to registration page";
 $newaccount_retacceuil = "Home page";
 
+#page/profile.php
+$pseudoprofile= "Username";
+$mailprofile = "Mail Adress";
+$inscritprofile = "Registered Since";
+$lastactionprofile = "Last Action";
 
 
 ?>

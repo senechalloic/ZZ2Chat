@@ -1,4 +1,6 @@
 <!doctype html>
+<?php include("../set_lang.php"); ?>
+
 <html>
 	<head>
 		<title>ZZchat</title>
@@ -35,7 +37,7 @@
 					$dateins2=$liste[3];
 					$rand2=$liste[4];
 					$randimg2=$listimg[$rand2];
-					echo  " <p class= \"imageprofile\"> <img src=\"../../static/img/animal/$randimg2\" style=\"height:120px;width:auto;$\"> </p> <p class=\"profile\">  </br> </br> Son Pseudo est : $pseudo1 </br> </br> Son Mail est : $mail2 </br> </br> Il est inscrit depuis le : $dateins2 </p> " ;
+					echo  " <p class= \"imageprofile\"> <img src=\"../../static/img/animal/$randimg2\" style=\"height:120px;width:auto;$\"> </p> <p class=\"profile\">  </br> </br> $pseudoprofile : $pseudo1 </br> </br> $mailprofile : $mail2 </br> </br> $inscritprofile: $dateins2 </p> " ;
 
 				}
 			}
@@ -52,11 +54,11 @@
 
 			
 
-			echo  "<p class= \"imageprofile\"> <img src=\"../../static/img/animal/$randimg\" style=\"height:120px;width:auto;$\"> </p> <p class=\"profile\">  </br> </br> Votre Pseudo est : $pseudo </br> </br> Votre Mail est : $mail </br> </br> Vous êtes inscrit depuis le : $dateins </br> </br> Votre derniere action a été effectué le : $lastaction  </p> "  ;
+			echo  "<p class= \"imageprofile\"> <img src=\"../../static/img/animal/$randimg\" style=\"height:120px;width:auto;$\"> </p> <p class=\"profile\">  </br> </br> $pseudoprofile : $pseudo </br> </br> $mailprofile : $mail </br> </br> $inscritprofile : $dateins </br> </br> $lastactionprofile: $lastaction  </p> "  ;
 		}
 		else
 		{
-			echo"co toi!";
+			echo"Connectez Vous";
 		}
 		
 		
