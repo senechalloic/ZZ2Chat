@@ -1,6 +1,9 @@
+<!doctype html>
+<?php include("set_lang.php"); ?> 
+
 <html>
 	<head>
-		<title>ZZchat</title>
+		<title><?php echo $newaccount_titre ?></title>
 		<link rel="stylesheet" type="text/css" href="../static/css/errstyle.css"/>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	</head>
@@ -20,9 +23,8 @@ include("func/cipher.php");
 
 if(isset($_POST['submit']))
 {
-	session_start();
-	print_r($_POST);
-	print_r($_SESSION);
+	#print_r($_POST);
+	#print_r($_SESSION);
 
 	$succes = 1;
 	$errmsg = '';
@@ -31,40 +33,39 @@ if(isset($_POST['submit']))
 	$password = $_POST['password'];	
 	$cpassword = $_POST['cpassword'];	
 	$mail = $_POST['mail'];
-	$showmail = $_POST['showmail'];
 	$captcha = $_POST['captcha'];
 	$realcaptcha = $_SESSION['captcha'];
 	
 	if(empty($username) || empty($password) || empty($cpassword) || empty($mail) || empty($captcha))
 	{
 		$succes = 0;
-		$errmsg = "Tous les champs doivent être complétés.";
+		$errmsg = $newaccount_err_champicomp;
 	}
 	else
 	{
 		if(strtoupper($captcha) != strtoupper($realcaptcha))
 		{
 			$succes = 0;
-			$errmsg = "Le captcha est incorrect.";
+			$errmsg = $newaccount_err_wrongcaptcha;
 		}
 		else
 		{
 			if($password != $cpassword)
 			{
 				$succes = 0;
-				$errmsg = "Les mots de passe que vous avez entrés sont différents.";
+				$errmsg = $newaccount_err_wrongpassword;
 			}
 			else
 			{
 				if($username == $password)
 				{
 					$succes = 0;
-					$errmsg = "Le login doit être différent du mot de passe.";
+					$errmsg = $newaccount_err_logdifpass;
 				}
 				elseif(strlen($password) < 8)
 				{
 					$succes = 0;
-					$errmsg = "Le mot de passe doit contenir au moins 8 caractères";
+					$errmsg = $newaccount_err_minsize;
 				}
 				else
 				{
@@ -85,12 +86,14 @@ if(isset($_POST['submit']))
 						if($exist == 1)
 						{
 							$succes = 0;
-							$errmsg = "Ce login n'est pas disponible";
+							$errmsg = $newaccount_err_loginexist;
 						}
 						else
 						{
-							$randimg = rand(0,11);
-							$dateins = date("j/m/Y");
+							include("../static/img/animal/listeimg.php");
+							$nbrimg = count($listimg)-1 -1;
+							$randimg = rand(0,$nbrimg);
+							$dateins = date("d/m/Y");
 							$text = $username . "," . cipher($password) . "," . $mail . "," . $dateins . "," . $randimg . "," . $showmail . "\r\n";
 							fwrite($fp, $text);
 						}
@@ -99,7 +102,7 @@ if(isset($_POST['submit']))
 					else
 					{
 						$succes = 0;
-						$errmsg = "Impossible de créer de comptes pour le moment.";
+						$errmsg = $newaccount_err_accessfile;
 					}
 				}
 			}
@@ -110,8 +113,8 @@ if(isset($_POST['submit']))
 	
 	if($succes == 1)
 	{
-		echo "<img src=\"../static/img/ok.png\"><h1 class=\"succes\">Inscrit</h1>";
-		echo "<p>Bienvenue sur la ZZchat $username!</p><p>Votre compte a bien été créé</p><br>";
+		echo "<img src=\"../static/img/ok.png\"><h1 class=\"succes\">$newaccount_inscrit</h1>";
+		echo "<p>$newaccount_bienvenu1 $username!</p><p>$newaccount_bienvenu2</p><br>";
 		session_start();
 		$_SESSION['pseudo'] = $username;
 		$_SESSION['mail'] = $mail;
@@ -133,10 +136,10 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		echo "<img src=\"../static/img/cross.png\"><h1 class=\"erreur\">Erreur</h1>";
+		echo "<img src=\"../static/img/cross.png\"><h1 class=\"erreur\">$newaccount_err</h1>";
 		echo "<p>$errmsg</p><br>";
 		
-		echo "<a href=\"page/inscription.php\">Retour inscription</a><br>";
+		echo "<a href=\"page/inscription.php\">$newaccount_retinscript</a><br>";
 	}
 	
 	
@@ -146,6 +149,6 @@ if(isset($_POST['submit']))
 ?>
 
 		
-		<a href="page/index.php">Retour acceuil</a>
+		<a href="page/index.php"><?php echo $newaccount_retacceuil ?></a>
 	</body>
 </html>

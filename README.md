@@ -1,6 +1,6 @@
 <p align="center"><img src="/static/img/chat.png" alt="zzChat" width="150px"/></p>
 
-
+<a href="http://www.isima.fr/~losenechal/test/ZZchat/">Lien vers le site</a>
 Authors: Nassim Rahmani & Loïc Sénéchal
 
 ## Notice

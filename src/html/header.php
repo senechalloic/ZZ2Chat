@@ -6,8 +6,7 @@
 						<br>
 						
 						<?php
-							session_start();
-							#print_r($_SESSION);  AFFICHER CA: pour comprendre le système de session et de connexion du site.
+							#print_r($_SESSION);  #AFFICHER CA: pour comprendre le système de session et de connexion du site.
 							$nbrcon = 0;
 							$strcon = '';
 							$nbrins = 0;
@@ -36,18 +35,20 @@
 							}
 							$strins = substr($strins, 0, -2);
 							$strcon = substr($strcon, 0, -2);
-							echo "<p class=\"left\"> $nbrins inscrits: $strins</p>";
-							echo "<p class=\"left\"> $nbrcon connectés: $strcon</p>";
+							echo "<p class=\"left\"> $nbrins $header_registered: $strins</p>";
+							echo "<p class=\"left\"> $nbrcon $header_connected: $strcon</p>";
 						?>
 						
 					</div>
 					<div class="col-md-4">
-						<a href="index.php"><img src="../../static/img/chat.png" class="logo" alt="logo ZZchat"></a>
+						<a href="../change_lang_fr.php"><img src="../../static/img/drap-fr.png" class="drap" alt="drap-fr"></a>
+						<a href="../page/index.php"><img src="../../static/img/chat.png" class="logo" alt="logo ZZchat"></a>
+						<a href="../change_lang_en.php"><img src="../../static/img/drap-en.png" class="drap" alt="drap-en"></a>
 					</div>
 					<div class="col-md-4">
 						<br><br>
-						<p>Bienvenue dans le grand chat</p>
-						<p>Chat actif ouvert à tous.</p>
+						<p><?php echo $header_welcome1 ?></p>
+						<p><?php echo $header_welcome2 ?></p>
 					</div>
 				</div>
 				<?php 

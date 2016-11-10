@@ -46,6 +46,12 @@ p
 	font-size: small;
 }
 
+.drap
+{
+	height: 14px;
+	width: auto;
+}
+
 .header
 {
 	border: 3px solid #B7695C;

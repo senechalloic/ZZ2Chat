@@ -1,7 +1,9 @@
 <!doctype html>
+<?php include("../set_lang.php"); ?> 
+
 <html>
 	<head>
-		<title>ZZchat</title>
+		<title><?php echo $index_titre ?></title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
@@ -12,8 +14,8 @@
 			<center>
 				<br>
 				
-				<p>Bienvenue dans le grand chat</p>
-				<p>Chat actif ouvert à tous.</p>
+				<p><?php echo $index_bienvenu1 ?></p>
+				<p><?php echo $index_bienvenu2 ?></p>
 				
 				<br><br><br><br><br><br>
 				
@@ -22,17 +24,17 @@
 				if($last != '')
 				{
 					$liste = explode(',', $last);
-					echo "<b><p>Dernier message de: </b><a href=\"profile.php?pseudo=$liste[0]\">$liste[0]</a> à <i>$liste[1]</i></p>";
+					echo "<b><p>$index_derniermessage: </b><a href=\"profile.php?pseudo=$liste[0]\">$liste[0]</a> $index_a <i>$liste[1]</i></p>";
 				}
 				else
 				{
-					echo "<p>Pas encore de messages</p>";
+					echo "<p>$index_pasmessages</p>";
 				}
 				?>
 				
 				<img src="../../static/img/isima.png" class="left" alt="logo de l'ISIMA" id="logoisima">
-				<p class="credit">Par Nassim Rahmani(narahmani@fc.isima.fr) & Loïc Sénéchal(losenecha@fc.isima.fr)</p>
-				<p class="credit">Projet de 2ème année: 2016 - 2017</p>
+				<p class="credit"><?php echo $index_credit1 ?></p>
+				<p class="credit"><?php echo $index_credit2 ?></p>
 			</center>
 		</div>
 		<script src="../../static/js/bootstrap.js" type="text/javascript"></script>

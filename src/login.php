@@ -1,6 +1,9 @@
+<!doctype html>
+<?php include("set_lang.php"); ?> 
+
 <html>
 	<head>
-		<title>ZZchat</title>
+		<title><?php echo $login_titre ?></title>
 		<link rel="stylesheet" type="text/css" href="../static/css/errstyle.css"/>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	</head>
@@ -24,7 +27,7 @@ if(isset($_POST['submit']))
 	if(empty($username) || empty($password))
 	{
 		$succes = 0;
-		$errmsg = "Tous les champs doivent être complétés.";
+		$errmsg = $login_err_champincomp;
 	}
 	else
 	{
@@ -47,13 +50,13 @@ if(isset($_POST['submit']))
 				if($password != decipher($liste[1]))
 				{
 					$succes = 0;
-					$errmsg = "Le mot de passe est incorrect.";
+					$errmsg = $login_err_wrongmdp;
 				}
 			}
 			else
 			{
 				$succes = 0;
-				$errmsg = "Le login est incorrect.";
+				$errmsg = $login_err_wronglogin;
 				
 				fclose($fp);
 			}
@@ -66,9 +69,9 @@ if(isset($_POST['submit']))
 	
 	if($succes == 1)
 	{
-		echo "<img src=\"../static/img/ok.png\"><h1 class=\"succes\">Connecté</h1>";
-		echo "<p>Vous êtes connectés, amusez-vous!</p><br>";
-		session_start();
+		echo "<img src=\"../static/img/ok.png\"><h1 class=\"succes\">$login_connected</h1>";
+		echo "<p>$login_connectedmessage</p><br>";
+
 		$_SESSION['pseudo'] = $username;
 		$_SESSION['mail'] = $liste[2];
 		$_SESSION['dateins'] = $liste[3];
@@ -88,15 +91,15 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		echo "<img src=\"../static/img/cross.png\"><h1 class=\"erreur\">Erreur</h1>";
+		echo "<img src=\"../static/img/cross.png\"><h1 class=\"erreur\">$login_err</h1>";
 		echo "<p>$errmsg</p><br>";
-		echo "<a href=\"page/connexion.php\">Retour connexion</a><br>";
+		echo "<a href=\"page/connexion.php\">$login_retcon</a><br>";
 	}
 }
 ?>
 
 		
-		<a href="page/index.php">Retour acceuil</a>
+		<a href="page/index.php"><?php echo $login_retacceuil?></a>
 		
 	
 	</body>
