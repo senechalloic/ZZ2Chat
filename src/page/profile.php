@@ -15,14 +15,44 @@
 		*/
 		
 		
-		include("../html/header.php"); 
+		include("../html/header.php");
+		$listimg = array("bird.png", "chick.png", "crab.png", "fox.png", "hippopotamus.png", "koala.png", "penguin.png", "piranha.png", "spider.png", "squirrel.png", "tiger.png", "whale.png");
 		if(isset($_GET['pseudo']))
 		{
-			echo "pagepersodugar" . $_GET['pseudo'];
+			$username = $_GET['pseudo'];
+			$fp = fopen('../../db/users.txt', 'r');
+			if($fp)
+			{
+				while(($line = fgets($fp)) !== false && $liste[0]!=$username)
+				{
+					$liste = explode(',', $line);
+
+				}
+				if($line!== false)
+				{
+					$pseudo1=$liste[0];
+					$mail2=$liste[2];
+					$dateins2=$liste[3];
+					$rand2=$liste[4];
+					$randimg2=$listimg[$rand2];
+					echo  " <p class= \"imageprofile\"> <img src=\"../../static/img/animal/$randimg2\" style=\"height:120px;width:auto;$\"> </p> <p class=\"profile\">  </br> </br> Son Pseudo est : $pseudo1 </br> </br> Son Mail est : $mail2 </br> </br> Il est inscrit depuis le : $dateins2 </p> " ;
+
+				}
+			}
 		}
 		elseif(isset($_SESSION['pseudo']))
 		{
-			echo "page perso plus choix";
+
+			$pseudo = $_SESSION['pseudo'];
+			$rand = $_SESSION['randimg'];
+			$mail = $_SESSION['mail'];
+			$dateins = $_SESSION['dateins'];
+			$lastaction = $_SESSION['lastaction'];
+			$randimg = $listimg[$rand];
+
+			
+
+			echo  "<p class= \"imageprofile\"> <img src=\"../../static/img/animal/$randimg\" style=\"height:120px;width:auto;$\"> </p> <p class=\"profile\">  </br> </br> Votre Pseudo est : $pseudo </br> </br> Votre Mail est : $mail </br> </br> Vous êtes inscrit depuis le : $dateins </br> </br> Votre derniere action a été effectué le : $lastaction  </p> "  ;
 		}
 		else
 		{
