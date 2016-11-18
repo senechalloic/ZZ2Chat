@@ -18,7 +18,7 @@
 		
 		
 		include("../html/header.php");
-		$listimg = array("bird.png", "chick.png", "crab.png", "fox.png", "hippopotamus.png", "koala.png", "penguin.png", "piranha.png", "spider.png", "squirrel.png", "tiger.png", "whale.png");
+		include("../../static/img/animal/listeimg.php");
 		if(isset($_GET['pseudo']))
 		{
 			$username = $_GET['pseudo'];

@@ -24,6 +24,5 @@ if(isset($_POST['submit']))
 		file_put_contents('../db/last.txt', $pseudo . "," . $date);
 		fclose($fp);
 	}
-	header("Location: page/room.php");
 }
 ?>

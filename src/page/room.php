@@ -12,64 +12,69 @@
 		<?php include("../html/header.php"); ?>
 		<div>
 			<center>
-				<div class="room" id="zoneMessage">
-					<?php
-						$fp = fopen('../../db/messages.txt', 'r');
-						$i = 0;
-						$compt = 0;
-						if($fp)
-						{
-							include("../../static/img/animal/listeimg.php");
-
-							while(($line = fgets($fp)) !== false)
-							{
-								$liste = explode(',', $line);
-								$randimg = $listimg[$liste[1]];
-								
-								if($i == 0){
-									echo "<p class=\"left\" style=\"background-color:#AAAADD\">-<a href=\"profile.php?pseudo=$liste[0]\"><img src=\"../../static/img/animal/$randimg\" style=\"height:30px;width:auto;$\"></a>-<b> $liste[0]</b><i>[$liste[2]]</i>: $liste[3]</p>"; 
-									$i += 1;
-								}
-								else{
-									echo "<p class=\"left\" style=\"background-color:#A0A0A0\">-<a href=\"profile.php?pseudo=$liste[0]\"><img src=\"../../static/img/animal/$randimg\" style=\"height:30px;width:auto;$\"></a>-<b> $liste[0]</b><i>[$liste[2]]</i>: $liste[3]</p>"; 
-									$i = 0; #A0A0A0
-								}
-								$compt += 1;
-							}
-							
-							$maxmessages = 40;  #7 visibles
-							$supprmessages = 20;
-							
-							if($compt > $maxmessages-1)
-							{
-								fclose($fp);
-								$fp = fopen('../../db/messages.txt', 'r');
-								$messages = file_get_contents("../../db/messages.txt");
-								$messages = explode("\r\n", $messages);
-								
-								$messagefin = "";
-								
-								for ($j = $supprmessages; $j <= $maxmessages-1; $j++) {
-									$messagefin .= $messages[$j] . "\r\n";
-								}
-								#echo "<h1>$messagefin</h1>";
-								file_put_contents("../../db/messages.txt", $messagefin);
-							}
-							fclose($fp);
-						}
-					?>
-				</div>
-				<script>
+				<script src="../../static/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+				
+				<script language="javascript">
+				
+				var doscroll = 1;
+				
+				function scrollToBot()
+				{
 					var element = document.getElementById("zoneMessage");
+					// alert(element.scrollHeight);
 					element.scrollTop = element.scrollHeight;
+					
+					
+					// alert(element.scrollTop - element.scrollHeight);
+					
+					// if(element.scrollTop - element.scrollHeight < 50)
+					// {
+						// element.scrollTop = element.scrollHeight;
+						// alert("Scroll bitch");
+					// }
+					// else
+					// {alert("Don't scroll bitch");}
+					
+					
+				}
+				
+				function myFunction()
+				{
+					$.ajax({
+						data: 'submit=' + 'ok' +'&message=' + document.getElementById("messageTxt").value,
+						url: '../send_messages.php',
+						method: 'POST',
+					});
+					document.getElementById('messageTxt').value='';
+				}
+				
+				function keymyFunction(e)
+				{
+					if (e.keyCode == 13) 
+					{
+						myFunction();
+					}
+				}
+				
+				
+				
+				$(document).ready(function(){
+					setInterval(function(){
+						$("#zoneMessage").load('../zone_message.php');
+					}, 2000);
+				});
+				
+				
 				</script>
+
+				<div class="room" id="zoneMessage"></div>
+				
 				<div class="sendmessage">
-					<form action="../send_messages.php" method="post">
-						<p><?php echo $room_envoyermess ?> :
-							<input type="text" name="message" style="border: 1px solid;font-size: 16px;padding: 5px;width: 800px;">
-							<input type="submit" value="<?php echo $room_submit ?> " name="submit">
-						</p>
-					</form>
+					<p>
+						<?php echo $room_envoyermess ?> :
+						<input type="text" name="message" id="messageTxt" onkeypress="return keymyFunction(event)" style="border: 1px solid;font-size: 16px;padding: 5px;width: 800px;">
+						<input type="button" value="<?php echo $room_submit ?> " name="submit" onclick="myFunction()">
+					</p>
 				</div>
 			</center>
 		</div>
