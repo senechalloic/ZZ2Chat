@@ -14,7 +14,7 @@
 		
 		
 		file_put_contents("../db/online.txt", str_replace($_SESSION['pseudo'] . "\r\n", "", file_get_contents("../db/online.txt")));
-
+        setcookie("name",$_SESSION['pseudo'],time() + 365*24*3600);
 		
 		session_destroy();
 		?>

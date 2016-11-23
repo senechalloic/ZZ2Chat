@@ -1,9 +1,19 @@
 		<div>
 			<center>
 				<br>
+				<?php if (isset($_COOKIE['name']))
+					{
+						$sh=$_COOKIE['name'];
+
+					}
+					else
+					{
+						$sh="";
+					}
+				?>
 				<form action="../login.php" method="post">
 					<?php echo $toconnect_username ?>:<br>
-					<input type="text" name="username"><br>
+					<input type="text" name="username" value="<?php echo $sh?>"/><br>
 					<?php echo $toconnect_password ?>:<br>
 					<input type="password" name="password">
 					<br>
