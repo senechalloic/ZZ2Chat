@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
 	</head>
 	<body>
-		<?php include("../html/header.php"); ?>
+		<?php include("../html/header.php"); $modif = 1?>
 		<div>
 			<center>
 				<script src="../../static/js/jquery-2.1.1.min.js" type="text/javascript"></script>
@@ -56,18 +56,40 @@
 					}
 				}
 				
-				
+				var init = 1;
 				
 				$(document).ready(function(){
 					setInterval(function(){
-						$("#zoneMessage").load('../zone_message.php');
-					}, 2000);
+						if(init != 1)
+						{
+							xmlhttp = new XMLHttpRequest();
+							xmlhttp.open("GET","../../db/modif.txt",false);
+							xmlhttp.send(null);
+							modif = xmlhttp.responseText;
+						}
+						else
+						{
+							var modif = 1;
+							init = 0;
+						}
+						console.log(modif);
+						if(modif == 1)
+						{
+							$("#zoneMessage").load('../zone_message.php');
+							$("#script_modif_to_0").load('../set_modif_to_0.php');
+						}
+						else
+						{
+							console.log("no modif");
+						}
+					}, 300);
 				});
 				
 				
 				</script>
 
 				<div class="room" id="zoneMessage"></div>
+				<div id="script_modif_to_0"></div>  <!-- style="display: none;" -->
 				
 				<div class="sendmessage">
 					<p>

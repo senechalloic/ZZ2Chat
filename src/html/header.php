@@ -47,7 +47,7 @@
 						<a href="../page/index.php"><img src="../../static/img/chat.png" class="logo" alt="logo ZZchat"></a>
 						<a href="../change_lang_en.php"><img src="../../static/img/drap-en.png" class="drap" alt="drap-en"></a>
 						
-						<audio controls autoplay>  <!-- style="display:none" -->
+						<audio controls>  <!-- style="display:none" autoplay-->
 						<?php
 							include("../../static/music/listemp3.php");
 							$nbrmp3 = count($listmp3)-1;

@@ -1,36 +1,38 @@
-Anonyme,12,16/11/2016 09:29,oh
-Anonyme,12,16/11/2016 09:29,ahnon
-Anonyme,12,16/11/2016 09:30,lala
-Anonyme,12,16/11/2016 09:30,oh
-Anonyme,12,16/11/2016 09:30,bien
-Anonyme,12,16/11/2016 09:30,bp
-Anonyme,12,16/11/2016 09:31,eheh
-Anonyme,12,16/11/2016 09:32,jeta
-Anonyme,12,16/11/2016 09:33,jaja
-Anonyme,12,16/11/2016 09:36,jo
-Anonyme,12,16/11/2016 09:36,nojj
-Anonyme,12,16/11/2016 09:37,bien
-Anonyme,12,16/11/2016 09:38,io
-Anonyme,12,16/11/2016 09:42,bonjour
-Anonyme,12,16/11/2016 09:43,retr
-Anonyme,12,16/11/2016 09:47,gna
-Anonyme,12,16/11/2016 09:47,hjggh
-Anonyme,12,16/11/2016 09:47,ggyuy
-Anonyme,12,18/11/2016 08:55,tgr
-Anonyme,12,18/11/2016 08:55,
-Anonyme,12,18/11/2016 08:55,Salut
-Anonyme,12,18/11/2016 08:56,pk ça bug
-Anonyme,12,18/11/2016 08:56,lol
-Anonyme,12,18/11/2016 08:57,deconne
-Anonyme,12,18/11/2016 09:01,ga
-Anonyme,12,18/11/2016 09:03,r
-Anonyme,12,18/11/2016 09:08,trgtr
-Anonyme,12,18/11/2016 09:10,tit
-Anonyme,12,18/11/2016 09:11,y-(
-Anonyme,12,18/11/2016 09:20,whé
-Anonyme,12,21/11/2016 22:44,salut
-nassim,6,21/11/2016 22:44,salut
-nassim,6,21/11/2016 22:44,bjr
-nassim,6,22/11/2016 21:41,ejfcjd
-nassim,6,23/11/2016 19:20,pnl
-nassim,6,23/11/2016 19:20,cool
+Anonyme,12,03/12/2016 15:28,Bref
+Anonyme,12,03/12/2016 15:29,J'adore
+Anonyme,12,03/12/2016 15:29,s
+Anonyme,12,03/12/2016 15:29,ahah
+Anonyme,12,03/12/2016 15:30,Bien ouéj
+Anonyme,12,03/12/2016 15:30,owo
+Anonyme,12,03/12/2016 15:30,po
+Anonyme,12,03/12/2016 15:30,bizare
+Anonyme,12,03/12/2016 15:30,c quoi
+Anonyme,12,03/12/2016 15:32,Je sais
+Anonyme,12,03/12/2016 15:32,Un truc perf
+Anonyme,12,03/12/2016 15:33,Boo
+Chachacha,7,03/12/2016 15:33,Ouais
+Chachacha,7,03/12/2016 15:34,trh
+Chachacha,7,03/12/2016 15:34,faerfa
+Chachacha,7,03/12/2016 15:34,j
+Chachacha,7,03/12/2016 15:34,rtg
+Chachacha,7,03/12/2016 15:34,trg
+Chachacha,7,03/12/2016 15:34,trg
+Chachacha,7,03/12/2016 15:34,rt
+Chachacha,7,03/12/2016 15:37,bla
+Chachacha,7,03/12/2016 15:37,roh
+Chachacha,7,03/12/2016 15:37,areagt
+Chachacha,7,03/12/2016 15:37,o$*
+Chachacha,7,03/12/2016 15:37,<?php print_r($_SESSION); ?>
+Chachacha,7,03/12/2016 16:03,yo
+Chachacha,7,03/12/2016 16:21,wesh
+Chachacha,7,03/12/2016 16:22,rah
+Chachacha,7,03/12/2016 16:22,go
+Chachacha,7,03/12/2016 16:22,fuu
+Chachacha,7,03/12/2016 16:22,la
+Chachacha,7,03/12/2016 16:22,lo
+Chachacha,7,03/12/2016 16:22,li
+Chachacha,7,03/12/2016 16:22,lu
+Chachacha,7,03/12/2016 16:22,azer
+Chachacha,7,03/12/2016 16:23,Bon ben c'est bon
+Chachacha,7,03/12/2016 16:23,zaera
+Chachacha,7,03/12/2016 16:23,frezf

@@ -22,6 +22,7 @@ if(isset($_POST['submit']))
 		$text = $pseudo . "," . $randimg . "," . $date . "," . $message . "\r\n";
 		fwrite($fp, $text);
 		file_put_contents('../db/last.txt', $pseudo . "," . $date);
+		file_put_contents('../db/modif.txt', '1');
 		fclose($fp);
 	}
 }
