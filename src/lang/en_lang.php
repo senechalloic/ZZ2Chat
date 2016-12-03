@@ -1,7 +1,8 @@
 <?php
+#This php file contains all the Variables which permit to display the chat in english when the user choose it.
 $lang = "en";
 
-#page/index.php
+#Variables for page/index.php
 $index_titre = "ZZchat";
 
 $index_bienvenu1 = "Welcome in the ZZchat";
@@ -12,12 +13,12 @@ $index_pasmessages = "No messages yet";
 $index_credit1 = "By Nassim Rahmani(narahmani@fc.isima.fr) & Loïc Sénéchal(losenecha@fc.isima.fr)";
 $index_credit2 = "School project of 2nd year: 2016 - 2017";
 
-#page/connexion.php
+#Variables for page/connexion.php
 $connexion_titre = "Log in - ZZchat";
 
 $connexion_dejaco = "You are already connected";
 
-#html/toconnect.php
+#Variables for html/toconnect.php
 $toconnect_username = "Login";
 $toconnect_password = "Password";
 $toconnect_submit = "Submit";
@@ -25,7 +26,7 @@ $toconnect_lostpass = "Lost password";
 $toconnect_inscription = "Registration";
 $toconnect_retacceuil = "Home page";
 
-#page/inscription.php
+#Variables for page/inscription.php
 $inscription_titre = "Registration - ZZchat";
 
 $inscription_username = "Login";
@@ -36,19 +37,19 @@ $inscription_captchainstr = "Recopiez les lettres";
 $inscription_submit = "Submit";
 $inscription_retacceuil = "Home page";
 
-#page/room.php
+#Variables for page/room.php
 $room_titre = "Room - ZZchat";
 
 $room_envoyermess = "Your message";
 $room_submit = "Submit";
 
-#html/header.php
+#Variables for html/header.php
 $header_registered = "subscribers";
 $header_connected = "connected";
 $header_welcome1 = "Welcome in the big chat";
 $header_welcome2 = "Open and active chat for all.";
 
-#login.php
+#Variables for login.php
 $login_titre = "Login - ZZchat";
 
 $login_err_champincomp = "All fields must be completed.";
@@ -61,13 +62,13 @@ $login_err = "Error";
 $login_retcon = "Back to log in page";
 $login_retacceuil = "Home page";
 
-#logout.php
+#Variables for logout.php
 $logout_titre = "Log out - ZZchat";
 
 $logout_aurevoir = "Goodbye, see you later!";
 $logout_retacceuil = "Home page";
 
-#new_account.php
+#Variables for new_account.php
 $newaccount_titre = "Creation of account - ZZchat";
 
 $newaccount_err_champicomp = "All fields must be completed.";
@@ -84,9 +85,9 @@ $newaccount_err = "Error";
 $newaccount_retinscript = "Back to registration page";
 $newaccount_retacceuil = "Home page";
 
-#page/profile.php
+#Variables for page/profile.php
 $pseudoprofile= "Username";
-$mailprofile = "Mail Adress";
+$mailprofile = "Mail Address";
 $inscritprofile = "Registered Since";
 $lastactionprofile = "Last Action";
 

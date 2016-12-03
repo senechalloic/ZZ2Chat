@@ -1,5 +1,5 @@
 <!doctype html>
-<?php include("set_lang.php"); ?> 
+<?php include("set_lang.php");//This permit to display the chat with the good language ?> 
 
 <html>
 	<head>
@@ -10,7 +10,7 @@
 	<body>
 
 <?php
-
+#This function permit to a person who is registered to log in and use the chat
 #Redirection automatique au bout de 5sec?
 
 include("func/decipher.php");
@@ -24,21 +24,21 @@ if(isset($_POST['submit']))
 	$username = $_POST['username'];
 	$password = $_POST['password'];	
 	
-	if(empty($username) || empty($password))
+	if(empty($username) || empty($password))// Case when the user doesn't have entered the username or the password or both, We display an error message
 	{
 		$succes = 0;
 		$errmsg = $login_err_champincomp;
 	}
-	else
+	else// The user have entered the username and the password, we will verify his identity
 	{
-		$exist = 0; #On suppose que le login n'existe pas
+		$exist = 0; #We suppose that the username does not exist
 		$fp = fopen('../db/users.txt', 'r');
 		if($fp)
 		{
 			while(($line = fgets($fp)) !== false && $exist == 0)
 			{
 				$liste = explode(',', $line);
-				if($liste[0] == $username)
+				if($liste[0] == $username)//The user has entered a username which is registered 
 				{
 					$exist = 1;
 				}
@@ -47,7 +47,7 @@ if(isset($_POST['submit']))
 						
 			if($exist == 1)
 			{
-				if($password != decipher($liste[1]))
+				if($password != decipher($liste[1]))// The password is wrong, We display an error message
 				{
 					$succes = 0;
 					$errmsg = $login_err_wrongmdp;
@@ -56,7 +56,7 @@ if(isset($_POST['submit']))
 			else
 			{
 				$succes = 0;
-				$errmsg = $login_err_wronglogin;
+				$errmsg = $login_err_wronglogin;// The username is not registered, We display an error message
 				
 				fclose($fp);
 			}
@@ -67,7 +67,7 @@ if(isset($_POST['submit']))
 		}
 	}
 	
-	if($succes == 1)
+	if($succes == 1)// The username and the password are correct, We display a favorable message and the user is connected
 	{
 		echo "<img src=\"../static/img/ok.png\"><h1 class=\"succes\">$login_connected</h1>";
 		echo "<p>$login_connectedmessage</p><br>";
@@ -81,7 +81,7 @@ if(isset($_POST['submit']))
 		$date = date("j/m/Y H:i");
 		$_SESSION['lastaction'] = $date;
 		
-		$fp = fopen('../db/online.txt', 'a+');
+		$fp = fopen('../db/online.txt', 'a+')//We add the user on the online users list;
 		if($fp)
 		{
 			$text = $username . "\r\n";

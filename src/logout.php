@@ -1,5 +1,5 @@
 <!doctype html>
-<?php include("set_lang.php"); ?> 
+<?php include("set_lang.php");//This permit to load the page in the good language ?> 
 
 <html>
 	<head>
@@ -11,10 +11,10 @@
 	<body>
 	
 		<?php
+		#This Function permit to disconnect the user
 		
-		
-		file_put_contents("../db/online.txt", str_replace($_SESSION['pseudo'] . "\r\n", "", file_get_contents("../db/online.txt")));
-        setcookie("name",$_SESSION['pseudo'],time() + 365*24*3600);
+		file_put_contents("../db/online.txt", str_replace($_SESSION['pseudo'] . "\r\n", "", file_get_contents("../db/online.txt"))); //The user will disappear of the online users list
+        setcookie("name",$_SESSION['pseudo'],time() + 365*24*3600); //We save the username of the last user connected on the web browser thanks to a Cookie 
 		
 		session_destroy();
 		?>

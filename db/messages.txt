@@ -1,38 +1,27 @@
-Anonyme,12,03/12/2016 15:28,Bref
-Anonyme,12,03/12/2016 15:29,J'adore
-Anonyme,12,03/12/2016 15:29,s
-Anonyme,12,03/12/2016 15:29,ahah
-Anonyme,12,03/12/2016 15:30,Bien ouéj
-Anonyme,12,03/12/2016 15:30,owo
-Anonyme,12,03/12/2016 15:30,po
-Anonyme,12,03/12/2016 15:30,bizare
-Anonyme,12,03/12/2016 15:30,c quoi
-Anonyme,12,03/12/2016 15:32,Je sais
-Anonyme,12,03/12/2016 15:32,Un truc perf
-Anonyme,12,03/12/2016 15:33,Boo
-Chachacha,7,03/12/2016 15:33,Ouais
-Chachacha,7,03/12/2016 15:34,trh
-Chachacha,7,03/12/2016 15:34,faerfa
-Chachacha,7,03/12/2016 15:34,j
-Chachacha,7,03/12/2016 15:34,rtg
-Chachacha,7,03/12/2016 15:34,trg
-Chachacha,7,03/12/2016 15:34,trg
-Chachacha,7,03/12/2016 15:34,rt
-Chachacha,7,03/12/2016 15:37,bla
-Chachacha,7,03/12/2016 15:37,roh
-Chachacha,7,03/12/2016 15:37,areagt
-Chachacha,7,03/12/2016 15:37,o$*
-Chachacha,7,03/12/2016 15:37,<?php print_r($_SESSION); ?>
-Chachacha,7,03/12/2016 16:03,yo
-Chachacha,7,03/12/2016 16:21,wesh
-Chachacha,7,03/12/2016 16:22,rah
-Chachacha,7,03/12/2016 16:22,go
-Chachacha,7,03/12/2016 16:22,fuu
-Chachacha,7,03/12/2016 16:22,la
-Chachacha,7,03/12/2016 16:22,lo
-Chachacha,7,03/12/2016 16:22,li
-Chachacha,7,03/12/2016 16:22,lu
-Chachacha,7,03/12/2016 16:22,azer
-Chachacha,7,03/12/2016 16:23,Bon ben c'est bon
-Chachacha,7,03/12/2016 16:23,zaera
-Chachacha,7,03/12/2016 16:23,frezf
+Anonyme,12,03/12/2016 19:23,s
+nassim,6,03/12/2016 22:16,bonjour
+nassim,6,03/12/2016 22:16,
+nassim,6,03/12/2016 22:16,slt
+nassim,6,03/12/2016 22:16,dj
+nassim,6,03/12/2016 22:17,dddddd
+nassim,6,03/12/2016 22:17,k,
+nassim,6,03/12/2016 22:27,merci
+nassim,6,03/12/2016 22:28,ok
+nassim,6,03/12/2016 22:28,ben ca marche
+nassim,6,03/12/2016 22:28,oui
+nassim,6,03/12/2016 22:29,it works
+nassim,6,03/12/2016 22:30,MLC
+nassim,6,03/12/2016 22:58,d
+nassim,6,03/12/2016 22:59,ouai
+nassim,6,03/12/2016 22:59,whosbad
+nassim,6,03/12/2016 22:59,dkc
+nassim,6,03/12/2016 22:59,
+nassim,6,03/12/2016 23:00,jjndfcj
+nassim,6,03/12/2016 23:02,ras
+nassim,6,03/12/2016 23:03,famas
+nassim,6,03/12/2016 23:04,jul
+nassim,6,03/12/2016 23:04,l'ovni
+nassim,6,03/12/2016 23:06,hg
+nassim,6,03/12/2016 23:13,estar
+nassim,6,03/12/2016 23:13,bjr
+nassim,6,03/12/2016 23:53,ejdfnhdfj
