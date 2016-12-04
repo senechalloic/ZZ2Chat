@@ -81,7 +81,7 @@ if(isset($_POST['submit']))
 		$date = date("j/m/Y H:i");
 		$_SESSION['lastaction'] = $date;
 		
-		$fp = fopen('../db/online.txt', 'a+')//We add the user on the online users list;
+		$fp = fopen('../db/online.txt', 'a+');//We add the user on the online users list
 		if($fp)
 		{
 			$text = $username . "\r\n";
