@@ -1,5 +1,5 @@
 <!doctype html>
-<?php include("set_lang.php"); ?> 
+<?php include("set_lang.php");//This permit to display the chat with the good language ?> 
 
 <html>
 	<head>
@@ -10,6 +10,8 @@
 	<body>
 
 <?php
+/*This function permit to create a new account for a user, He will give a username, a password , a mail Address and enter a captcha.His username and his password will 
+be stored in a text file , the password will be crypted.
 /*
 TO DO LIST:
 -interdire caractère spéciaux pour le login
@@ -19,7 +21,7 @@ BONUS:
 -vérifier validité mail
 */
 
-include("func/cipher.php");
+include("func/cipher.php");//This is the function which permit to encrypt the password to store it in the text file
 
 if(isset($_POST['submit']))
 {
@@ -36,40 +38,40 @@ if(isset($_POST['submit']))
 	$captcha = $_POST['captcha'];
 	$realcaptcha = $_SESSION['captcha'];
 	
-	if(empty($username) || empty($password) || empty($cpassword) || empty($mail) || empty($captcha))
+	if(empty($username) || empty($password) || empty($cpassword) || empty($mail) || empty($captcha))//Situation when the user doesn't has entered a username or a password or the mail or the captcha We display an error message
 	{
 		$succes = 0;
 		$errmsg = $newaccount_err_champicomp;
 	}
-	else
+	else//The user has entered a username , a password, a mail and a captcha
 	{
-		if(strtoupper($captcha) != strtoupper($realcaptcha))
+		if(strtoupper($captcha) != strtoupper($realcaptcha))//The user has entered a wrong captcha so we display an error message
 		{
 			$succes = 0;
 			$errmsg = $newaccount_err_wrongcaptcha;
 		}
-		else
+		else// The user has entered the good captcha
 		{
-			if($password != $cpassword)
+			if($password != $cpassword)//The confirmation of the password is wrong, we display an error message
 			{
 				$succes = 0;
 				$errmsg = $newaccount_err_wrongpassword;
 			}
-			else
+			else// The confirmation of the password is true
 			{
-				if($username == $password)
+				if($username == $password)//If the username is similar to the password we display an error message
 				{
 					$succes = 0;
 					$errmsg = $newaccount_err_logdifpass;
 				}
-				elseif(strlen($password) < 8)
+				elseif(strlen($password) < 8)//If the password has less than 8 charachters we display an error message 
 				{
 					$succes = 0;
 					$errmsg = $newaccount_err_minsize;
 				}
-				else
+				else// All is correct, We will add the user on the registered users list
 				{
-					$exist = 0; #On suppose que le login n'existe pas
+					$exist = 0; #we suppose thah the login does not exist
 					$fp = fopen('../db/users.txt', 'a+');
 					if($fp)
 					{
@@ -83,12 +85,12 @@ if(isset($_POST['submit']))
 							#echo "<p>$liste[0] et $username: $exist</p>";
 						}
 						
-						if($exist == 1)
+						if($exist == 1)// If the username is already taken we will display an error message
 						{
 							$succes = 0;
 							$errmsg = $newaccount_err_loginexist;
 						}
-						else
+						else//The username is not taken so we add the user on the registered users list
 						{
 							include("../static/img/animal/listeimg.php");
 							$nbrimg = count($listimg)-1 -1;
@@ -99,7 +101,7 @@ if(isset($_POST['submit']))
 						}
 					fclose($fp);
 					}
-					else
+					else// The list of registered users is unaccessible
 					{
 						$succes = 0;
 						$errmsg = $newaccount_err_accessfile;
@@ -111,7 +113,7 @@ if(isset($_POST['submit']))
 	
 	session_destroy();
 	
-	if($succes == 1)
+	if($succes == 1)//If all went well we display a succes message
 	{
 		echo "<img src=\"../static/img/ok.png\"><h1 class=\"succes\">$newaccount_inscrit</h1>";
 		echo "<p>$newaccount_bienvenu1 $username!</p><p>$newaccount_bienvenu2</p><br>";

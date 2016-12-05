@@ -63,9 +63,10 @@
 						if(init != 1)
 						{
 							xmlhttp = new XMLHttpRequest();
-							xmlhttp.open("GET","../../db/modif.txt",false);
+					        xmlhttp.open("GET","../../db/modif.txt",false);
 							xmlhttp.send(null);
 							modif = xmlhttp.responseText;
+							
 						}
 						else
 						{
@@ -82,7 +83,7 @@
 						{
 							console.log("no modif");
 						}
-					}, 300);
+					}, 2000);
 				});
 				
 				
