@@ -40,8 +40,23 @@
 				
 				function myFunction()
 				{
+					var messageFormate = document.getElementById("messageTxt").value;
+					
+					if(document.getElementById("boldinput").checked)
+					{
+						messageFormate = '<b>' + messageFormate + '</b>';
+					}
+					if(document.getElementById("italicinput").checked)
+					{
+						messageFormate = '<i>' + messageFormate + '</i>';
+					}
+					if(document.getElementById("underlineinput").checked)
+					{
+						messageFormate = '<u>' + messageFormate + '</u>';
+					}
+					
 					$.ajax({
-						data: 'submit=' + 'ok' +'&message=' + document.getElementById("messageTxt").value,
+						data: 'submit=' + 'ok' +'&message=' + messageFormate,
 						url: '../send_messages.php',
 						method: 'POST',
 					});
@@ -92,10 +107,17 @@
 				<div class="room" id="zoneMessage"></div>
 				<div id="script_modif_to_0"></div>  <!-- style="display: none;" -->
 				
+				
 				<div class="sendmessage">
 					<p>
 						<?php echo $room_envoyermess ?> :
-						<input type="text" name="message" id="messageTxt" onkeypress="return keymyFunction(event)" style="border: 1px solid;font-size: 16px;padding: 5px;width: 800px;">
+						<input type="text" name="message" id="messageTxt" onkeypress="return keymyFunction(event)" style="border: 1px solid;font-size: 16px;padding: 5px;width: 600px;">
+						<img src="../../static/img/bold.png" alt="bold icon">
+						<input type="checkbox" id="boldinput" checked="checked">
+						<img src="../../static/img/italic.png" alt="italic icon">
+						<input type="checkbox" id="italicinput">
+						<img src="../../static/img/underline.png" alt="underline icon">
+						<input type="checkbox" id="underlineinput">
 						<input type="button" value="<?php echo $room_submit ?> " name="submit" onclick="myFunction()">
 					</p>
 				</div>

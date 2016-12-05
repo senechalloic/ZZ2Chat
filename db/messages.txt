@@ -1,37 +1,22 @@
-Anonyme,12,04/12/2016 19:22,pooo
-Anonyme,12,04/12/2016 19:22,zhdbghbcdd
-Anonyme,12,04/12/2016 19:23,comm
-Anonyme,12,04/12/2016 19:24,bizzare
-Anonyme,12,04/12/2016 19:28,
-Anonyme,12,04/12/2016 19:31,ezdfndncfd
-donpietro,8,04/12/2016 19:36,savastnao
-donpietro,8,04/12/2016 19:37,don
-donpietro,8,04/12/2016 19:40,kjnkjn
-donpietro,8,04/12/2016 19:41,hdggevd
-donpietro,8,04/12/2016 19:41,
-donpietro,8,04/12/2016 19:46,creu
-donpietro,8,04/12/2016 20:01,ad
-donpietro,8,04/12/2016 20:01,
-donpietro,8,04/12/2016 20:01,khey
-donpietro,8,04/12/2016 20:01,5465416
-donpietro,8,04/12/2016 20:02,zeler
-Anonyme,12,04/12/2016 20:03,nos
-Anonyme,12,04/12/2016 20:23,xdcjidcnhd
-Anonyme,12,04/12/2016 20:25,j
-Anonyme,12,05/12/2016 00:01,dfdfdfd
-Anonyme,12,05/12/2016 13:33,eidjeijd
-Anonyme,12,05/12/2016 13:33,bonjour
-Anonyme,12,05/12/2016 13:33,salut
-donpietro,8,05/12/2016 14:01,ezu_fye_hdr
-donpietro,8,05/12/2016 14:01,mpm!pmpmpmlpml
-donpietro,8,05/12/2016 14:01,dciuchfuibvifnhvufhfvufrh
-donpietro,8,05/12/2016 14:01,
-donpietro,8,05/12/2016 14:01,uhuhduchduhcfud
-donpietro,8,05/12/2016 14:02,dufhduf
-donpietro,8,05/12/2016 14:03,ideidfje
-donpietro,8,05/12/2016 14:03,salut
-donpietro,8,05/12/2016 14:03,eifjdeigf
-donpietro,8,05/12/2016 14:03,coucou
-donpietro,8,05/12/2016 14:04,salut
-donpietro,8,05/12/2016 14:09,didfdjifjd7
-donpietro,8,05/12/2016 14:14,[b] hdebguhdhb [/b]
+Anonyme,12,05/12/2016 15:11,rg
+Anonyme,12,05/12/2016 15:14,
+Anonyme,12,05/12/2016 15:14,
+Anonyme,12,05/12/2016 15:14,
+Anonyme,12,05/12/2016 15:14,
+Anonyme,12,05/12/2016 15:14,
+Anonyme,12,05/12/2016 15:14,
+Anonyme,12,05/12/2016 15:14,
+Anonyme,12,05/12/2016 15:14,
+Anonyme,12,05/12/2016 15:14,
+Anonyme,12,05/12/2016 15:14,
+Anonyme,12,05/12/2016 15:25,
+Anonyme,12,05/12/2016 15:25,
+Anonyme,12,05/12/2016 15:27,ca marche
+Anonyme,12,05/12/2016 15:27,e
+Anonyme,12,05/12/2016 15:27,ahah
+Anonyme,12,05/12/2016 15:27,YO t la
+Anonyme,12,05/12/2016 15:27,mais pk ça bug?
+Anonyme,12,05/12/2016 15:28,<b>Un message en gras?</b>
+Anonyme,12,05/12/2016 15:28,<i>Un en italic</i>
+Anonyme,12,05/12/2016 15:28,<u>Un soulingé</u>
+Anonyme,12,05/12/2016 15:28,<u><i><b>Gralicline</b></i></u>
