@@ -90,6 +90,6 @@ $pseudoprofile= "Username";
 $mailprofile = "Mail Address";
 $inscritprofile = "Registered Since";
 $lastactionprofile = "Last Action";
-
+$nonprofile = "You must Connect";
 
 ?>

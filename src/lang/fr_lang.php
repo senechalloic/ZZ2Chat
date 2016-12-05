@@ -89,5 +89,5 @@ $pseudoprofile= "Pseudo";
 $mailprofile = "Adresse Mail";
 $inscritprofile = "Inscrit Depuis le";
 $lastactionprofile = "Derniere action a été effectué le";
-
+$nonprofile = "Connectez Vous";
 ?>
