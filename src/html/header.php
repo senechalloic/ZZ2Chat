@@ -5,7 +5,7 @@
 					<div class="col-md-4">
 						<br>
 						
-						
+						<!-- This page display the header. -->
 						
 						<?php
 							#print_r($_SESSION);  #AFFICHER CA: pour comprendre le système de session et de connexion du site.
@@ -19,12 +19,15 @@
 							
 							if($fp && $fp2) 
 							{
+								#List the subscribers
 								while(($line = fgets($fp)) !== false)
 								{
 									$liste = explode(',', $line);
 									$strins .= "<a href=\"../page/profile.php?pseudo=$liste[0]\">$liste[0]</a>, ";
 									$nbrins += 1;
 								}
+								
+								#List the connected
 								while(($line = fgets($fp2)) !== false)
 								{
 									$strcon .= "<a href=\"../page/profile.php?pseudo=$line\">$line</a>, ";

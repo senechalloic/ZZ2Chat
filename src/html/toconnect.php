@@ -1,10 +1,9 @@
 		<div>
-			<center>
+			<center><!-- This page display the form to connect. -->
 				<br>
 				<?php if (isset($_COOKIE['name']))
 					{
 						$sh=$_COOKIE['name'];
-
 					}
 					else
 					{

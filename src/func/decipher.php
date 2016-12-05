@@ -6,6 +6,13 @@
 # 2. On prend le troisième caractère. Un chiffre aléatoire n. Qui donne la n-ième lettre min associée à 0, la n+1 ème associé à 1, etc... jusqu'à 9. On remplace les chiffres et lettres associés.
 #    On ne touche pas au troisième caractère.
 
+#RULES OF THE CODE
+#
+# 1. Every 2 caracters, we add a random number between 0 and 9. With this number we perfom a positive permutation of this number, on the 2 previous characters.
+# 2. We take the third characteur. A random number n. That gives the n-th lower-case letter associated to 0, the n+1-th associated to 1, etc... until 9. We remplace numbers and letters associated.
+#    We don't modify the third character.
+
+
 function decipher($str)
 {
 	$strfin = $str;

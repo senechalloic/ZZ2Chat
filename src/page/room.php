@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- This page display the room. -->
 <?php include("../set_lang.php"); ?> 
 
 <html>
@@ -18,6 +19,7 @@
 				
 				var doscroll = 1;
 				
+				//Function that scroll the bar to bottom
 				function scrollToBot()
 				{
 					var element = document.getElementById("zoneMessage");
@@ -38,10 +40,12 @@
 					
 				}
 				
+				//Function called when the submit button is pushed
 				function myFunction()
 				{
 					var messageFormate = document.getElementById("messageTxt").value;
 					
+					//We test if the formating boxes are checked
 					if(document.getElementById("boldinput").checked)
 					{
 						messageFormate = '<b>' + messageFormate + '</b>';
@@ -63,6 +67,7 @@
 					document.getElementById('messageTxt').value='';
 				}
 				
+				//If the user push the 'Entrer' submit
 				function keymyFunction(e)
 				{
 					if (e.keyCode == 13) 
@@ -75,6 +80,7 @@
 				
 				$(document).ready(function(){
 					setInterval(function(){
+						//If the program is initialized. It put the content of modif.txt into modif var.
 						if(init != 1)
 						{
 							xmlhttp = new XMLHttpRequest();
@@ -83,6 +89,7 @@
 							modif = xmlhttp.responseText;
 							
 						}
+						//Init the modif to 1 for the site to reload on first oppening
 						else
 						{
 							var modif = 1;
