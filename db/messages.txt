@@ -1,30 +1,15 @@
-Anonyme,12,05/12/2016 15:11,rg
-Anonyme,12,05/12/2016 15:14,
-Anonyme,12,05/12/2016 15:14,
-Anonyme,12,05/12/2016 15:14,
-Anonyme,12,05/12/2016 15:14,
-Anonyme,12,05/12/2016 15:14,
-Anonyme,12,05/12/2016 15:14,
-Anonyme,12,05/12/2016 15:14,
-Anonyme,12,05/12/2016 15:14,
-Anonyme,12,05/12/2016 15:14,
-Anonyme,12,05/12/2016 15:14,
-Anonyme,12,05/12/2016 15:25,
-Anonyme,12,05/12/2016 15:25,
-Anonyme,12,05/12/2016 15:27,ca marche
-Anonyme,12,05/12/2016 15:27,e
-Anonyme,12,05/12/2016 15:27,ahah
-Anonyme,12,05/12/2016 15:27,YO t la
-Anonyme,12,05/12/2016 15:27,mais pk ça bug?
-Anonyme,12,05/12/2016 15:28,<b>Un message en gras?</b>
-Anonyme,12,05/12/2016 15:28,<i>Un en italic</i>
-Anonyme,12,05/12/2016 15:28,<u>Un soulingé</u>
-Anonyme,12,05/12/2016 15:28,<u><i><b>Gralicline</b></i></u>
-Anonyme,12,05/12/2016 15:46,<i><b>ijoijik</b></i>
-Anonyme,12,05/12/2016 15:46,<i><b></b></i>
-Anonyme,12,05/12/2016 15:46,<i><b></b></i>
-Anonyme,12,05/12/2016 15:46,<i><b></b></i>
-Anonyme,12,05/12/2016 15:46,<i><b></b></i>
-Anonyme,12,05/12/2016 15:46,<i><b></b></i>
-Anonyme,12,05/12/2016 15:46,<i><b></b></i>
-Anonyme,12,05/12/2016 15:46,<i><b>k</b></i>
+ciro::4::06/12/2016 14:03::<b>coucou</b>
+nassim::1::06/12/2016 14:06::<b>bonjour</b>
+nassim::1::06/12/2016 14:06::<b>Je suis la </b>
+nassim::1::06/12/2016 14:06::<u>souligné</u>
+nassim::1::06/12/2016 14:06::<u><b>souligné plus gras</b></u>
+loic::8::06/12/2016 14:08::<b>lolo</b>
+Anonyme::12::06/12/2016 14:09::<b>anonyme</b>
+Anonyme::12::06/12/2016 14:46::<b>annnn</b>
+loic::8::06/12/2016 14:46::<b>fofrfirigjr</b>
+Anonyme::12::06/12/2016 14:51::<b>meme en anonyme</b>
+Anonyme::12::06/12/2016 14:51::<b>edbdi,</b>
+loic::8::06/12/2016 14:51::<b>coucou</b>
+loic::8::06/12/2016 14:52::<b>coucou</b>
+nassim::1::06/12/2016 14:52::<b>ca bug pas </b>
+nassim::1::06/12/2016 14:52::<b>cool</b>
