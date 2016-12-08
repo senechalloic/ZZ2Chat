@@ -111,6 +111,7 @@ if(isset($_POST['submit']))
 		}
 	}
 	
+	session_unset();
 	session_destroy();
 	
 	if($succes == 1)//If all went well we display a succes message
