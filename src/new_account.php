@@ -77,7 +77,7 @@ if(isset($_POST['submit']))
 					{
 						while(($line = fgets($fp)) !== false && $exist == 0)
 						{
-							$liste = explode(',', $line);
+							$liste = explode('::', $line);
 							if($liste[0] == $username)
 							{
 								$exist = 1;
@@ -96,7 +96,7 @@ if(isset($_POST['submit']))
 							$nbrimg = count($listimg)-1 -1;
 							$randimg = rand(0,$nbrimg);
 							$dateins = date("d/m/Y");
-							$text = $username . "," . cipher($password) . "," . $mail . "," . $dateins . "," . $randimg . "," . $showmail . "\r\n";
+							$text = $username . "::" . cipher($password) . "::" . $mail . "::" . $dateins . "::" . $randimg . "::" . $showmail . "\r\n";
 							fwrite($fp, $text);
 						}
 					fclose($fp);

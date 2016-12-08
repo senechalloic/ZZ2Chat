@@ -22,7 +22,7 @@
 								#List the subscribers
 								while(($line = fgets($fp)) !== false)
 								{
-									$liste = explode(',', $line);
+									$liste = explode('::', $line);
 									$strins .= "<a href=\"../page/profile.php?pseudo=$liste[0]\">$liste[0]</a>, ";
 									$nbrins += 1;
 								}

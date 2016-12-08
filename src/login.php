@@ -37,7 +37,7 @@ if(isset($_POST['submit']))
 		{
 			while(($line = fgets($fp)) !== false && $exist == 0)
 			{
-				$liste = explode(',', $line);
+				$liste = explode('::', $line);
 				if($liste[0] == $username)//The user has entered a username which is registered 
 				{
 					$exist = 1;

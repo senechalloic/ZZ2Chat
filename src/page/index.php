@@ -23,7 +23,7 @@
 				$last = file_get_contents("../../db/last.txt");
 				if($last != '')
 				{
-					$liste = explode(',', $last);
+					$liste = explode('::', $last);
 					echo "<b><p>$index_derniermessage: </b><a href=\"profile.php?pseudo=$liste[0]\">$liste[0]</a> $index_a <i>$liste[1]</i></p>";//Last action displayed
 				}
 				else//No last action

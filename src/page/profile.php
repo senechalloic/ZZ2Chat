@@ -20,7 +20,7 @@
 			{
 				while(($line = fgets($fp)) !== false && $liste[0]!=$username)
 				{
-					$liste = explode(',', $line);
+					$liste = explode('::', $line);
 
 				}
 				if($line!== false)

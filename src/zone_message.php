@@ -8,7 +8,7 @@ if($fp)
 
 	while(($line = fgets($fp)) !== false)//We display the messages using a text file containing all the messages
 	{
-		$liste = explode(',', $line);
+		$liste = explode('::', $line);
 		$randimg = $listimg[$liste[1]];
 		
 		if($i == 0){
