@@ -72,6 +72,7 @@ $newaccount_titre = "Création de compte - ZZchat";
 
 $newaccount_err_champicomp = "Tous les champs doivent être complétés.";
 $newaccount_err_wrongcaptcha = "Le captcha est incorrect.";
+$newaccount_err_forbiddenchara = "Les caractères spéciaux sont interdits.";
 $newaccount_err_wrongpassword = "Les mots de passe que vous avez entrés sont différents.";
 $newaccount_err_logdifpass = "Le mot de passe doit être différent du login.";
 $newaccount_err_minsize = "Le mot de passe doit contenir au moins 8 caractères.";

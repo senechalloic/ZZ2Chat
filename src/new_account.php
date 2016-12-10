@@ -52,59 +52,69 @@ if(isset($_POST['submit']))
 		}
 		else// The user has entered the good captcha
 		{
-			if($password != $cpassword)//The confirmation of the password is wrong, we display an error message
+			$forbidden_charac = '/[\'\/~`\!#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\?\\\]/';
+			
+			if(preg_match($forbidden_charac, $username) || preg_match($forbidden_charac, $password) || preg_match($forbidden_charac, $cpassword) || preg_match($forbidden_charac, $mail) || preg_match($forbidden_charac, $captcha))
 			{
 				$succes = 0;
-				$errmsg = $newaccount_err_wrongpassword;
+				$errmsg = $newaccount_err_forbiddenchara;
 			}
-			else// The confirmation of the password is true
+			else // There are no forbidden characters
 			{
-				if($username == $password)//If the username is similar to the password we display an error message
+				if($password != $cpassword)//The confirmation of the password is wrong, we display an error message
 				{
 					$succes = 0;
-					$errmsg = $newaccount_err_logdifpass;
+					$errmsg = $newaccount_err_wrongpassword;
 				}
-				elseif(strlen($password) < 8)//If the password has less than 8 charachters we display an error message 
+				else// The confirmation of the password is true
 				{
-					$succes = 0;
-					$errmsg = $newaccount_err_minsize;
-				}
-				else// All is correct, We will add the user on the registered users list
-				{
-					$exist = 0; #we suppose thah the login does not exist
-					$fp = fopen('../db/users.txt', 'a+');
-					if($fp)
-					{
-						while(($line = fgets($fp)) !== false && $exist == 0)
-						{
-							$liste = explode('::', $line);
-							if($liste[0] == $username)
-							{
-								$exist = 1;
-							}
-							#echo "<p>$liste[0] et $username: $exist</p>";
-						}
-						
-						if($exist == 1)// If the username is already taken we will display an error message
-						{
-							$succes = 0;
-							$errmsg = $newaccount_err_loginexist;
-						}
-						else//The username is not taken so we add the user on the registered users list
-						{
-							include("../static/img/animal/listeimg.php");
-							$nbrimg = count($listimg)-1 -1;
-							$randimg = rand(0,$nbrimg);
-							$dateins = date("d/m/Y");
-							$text = $username . "::" . cipher($password) . "::" . $mail . "::" . $dateins . "::" . $randimg . "::" . $showmail . "\r\n";
-							fwrite($fp, $text);
-						}
-					fclose($fp);
-					}
-					else// The list of registered users is unaccessible
+					if($username == $password)//If the username is similar to the password we display an error message
 					{
 						$succes = 0;
-						$errmsg = $newaccount_err_accessfile;
+						$errmsg = $newaccount_err_logdifpass;
+					}
+					elseif(strlen($password) < 8)//If the password has less than 8 charachters we display an error message 
+					{
+						$succes = 0;
+						$errmsg = $newaccount_err_minsize;
+					}
+					else// All is correct, We will add the user on the registered users list
+					{
+						$exist = 0; #we suppose thah the login does not exist
+						$fp = fopen('../db/users.txt', 'a+');
+						if($fp)
+						{
+							while(($line = fgets($fp)) !== false && $exist == 0)
+							{
+								$liste = explode('::', $line);
+								if($liste[0] == $username)
+								{
+									$exist = 1;
+								}
+								#echo "<p>$liste[0] et $username: $exist</p>";
+							}
+							
+							if($exist == 1)// If the username is already taken we will display an error message
+							{
+								$succes = 0;
+								$errmsg = $newaccount_err_loginexist;
+							}
+							else//The username is not taken so we add the user on the registered users list
+							{
+								include("../static/img/animal/listeimg.php");
+								$nbrimg = count($listimg)-1 -1;
+								$randimg = rand(0,$nbrimg);
+								$dateins = date("d/m/Y");
+								$text = $username . "::" . cipher($password) . "::" . $mail . "::" . $dateins . "::" . $randimg . "::\r\n";
+								fwrite($fp, $text);
+							}
+						fclose($fp);
+						}
+						else// The list of registered users is unaccessible
+						{
+							$succes = 0;
+							$errmsg = $newaccount_err_accessfile;
+						}
 					}
 				}
 			}
