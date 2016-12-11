@@ -1,2 +1,6 @@
 ﻿Loic::11::10/12/2016 14:34::<b>Cha</b>
 Anonyme::12::10/12/2016 14:36::<b>Wesh</b>
+fifig3::8::10/12/2016 20:28::<b>de quoi peux t on parler sur ce chat ?</b>
+fifig3::8::10/12/2016 20:29::Des pleins de chats
+david::4::11/12/2016 14:06::<b>test</b>
+david::4::11/12/2016 14:06::test
